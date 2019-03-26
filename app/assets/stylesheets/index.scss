@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
+
+body{
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    
+}
+::-webkit-scrollbar-track {
+    background: silver; 
+  }
+::-webkit-scrollbar {
+    width: 4px;
+  }
+.search{
+    display:flex;
+    flex-wrap: wrap;
+    padding: 2em;
+    padding-top: .5em;
+	padding-bottom: .5em;
+	border: 1px solid #a2a2a2;
+	background-color: #f4f4f4;
+	-webkit-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+.search-heading{
+    color:#34495e;
+    margin: 0%;
+}
+.search-form{
+    display: flex;
+    flex-direction: row;
+    padding-left: 5%;
+    padding-bottom: 1%;
+    width: 85%;
+}
+.search-bar{
+    width: 75%;
+    white-space: wrap;
+    padding: 0.35em 0.75em;
+    font-size: 1.1em;
+    text-decoration: none;
+	line-height: normal;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border: 3px solid silver;
+    border-radius: 5px 0px 0px 5px;
+}
+.search-button{
+    color: white;
+    font-size: 1.1em;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    background-color: silver;
+    border: none;
+    cursor: pointer;
+    border-radius: 0px 5px 5px 0px;
+}
+.main-nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: -1%;
+}
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+a{
+	color: #34495e;
+}
+a {
+	text-decoration: none;
+}
+.main-nav a {
+	padding: 10px 15px;
+	text-transform: uppercase;
+	text-align: center;
+	display: block;
+}
+.right1{
+    position: absolute;
+    right: 10%;
+}
+.right2{
+    position: absolute;
+    right: 4%;
+}
+.background-img{
+        height:580px;
+        width:100%;
+}
+.container{
+    margin-top: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.card {
+    box-shadow: 8px 4px 8px 8px rgba(0,0,0,0.2);
+    width: 25%;
+  }
+  
+.card-bottom {
+    padding: 2px 16px;
+  }
+.card-img{
+    height: 100%;
+    width: 100%;
+}
+    

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ProductService</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+
+  <body>
+    
+    <section class="search">
+            <h1 class="search-heading">Products.io</h1>
+
+                <%= form_tag products_path, class: "search-form", :method => 'get' do %>
+                  <%= text_field_tag :search, params[:search], class: "search-bar" %>
+                <%= submit_tag "search", class: "search-button"%>
+                <% end %>
+
+            <ul class="main-nav">
+                <li><%= link_to 'Home', root_path %></li>
+                <li><%= link_to 'Products', products_path %></li>
+                <li><%= link_to pluralize(current_cart.items_count, 'Order'), orders_path %></li>
+               
+
+                
+                <li class="right1">
+                    <%= link_to 'Sign up', new_user_registration_path  %>
+                </li>
+                <li class="right2">
+                    <% if signed_in? %>
+                        <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+                    <% else %>
+                        <%= link_to 'Sign in', new_user_session_path %>
+                    <% end %>
+                    </li>
+                </ul>
+        </section>
+        
+       
+
+    <div class="content">
+      <div class="content-inside">
+        <%= apis.each do |api| %>
+          <%= api[2] %>
+        <% end %>
+        <%= yield %>
+      </div>
+    </div>
+    
+    <footer class="footer">
+      <div class="Aligner">
+       <div class="Aligner-item">Copyright ©</div>
+      </div>
+    </footer>
+  </body>
+</html>

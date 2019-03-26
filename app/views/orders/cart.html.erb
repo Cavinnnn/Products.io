@@ -1,0 +1,38 @@
+<%= stylesheet_link_tag "cart" %>
+
+<h1>Shopping Cart</h1>
+<div class="container">
+    <table class="rwd-table">
+    <tr>
+        <th>Order ID </th>
+        <th>Price</th> 
+        <th>Quantity</th>
+        <th>Product ID</th>
+        <th>User ID</th>
+    </tr>
+    <% @order.each do |o| %>
+        <tr>
+            <td><%= o.id %></td>
+            <td><%= o.price %></td>
+            <td><%= o.quantity %></td>
+            <td><%= o.product_id %></td>
+            <td><%= o.user_id %></td>
+            <td>
+                <%= form_for o, method: :delete do |f| %>
+                    <%= f.submit "Remove", class:"btn1" %>
+                <% end %>
+            </td>
+
+        </tr>
+    <% end %>
+        
+    </table>
+
+    <div class="check-out">
+        <span class="">Subtotal(<%= current_cart.items_count %> items):</span> 
+        <span class="total">€<%= subtotal %></span><br>
+
+
+        <button class="btn2"><%= link_to "Check Out", checkout_path %></button>
+    </div>
+</div>

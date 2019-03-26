@@ -1,0 +1,23 @@
+<%= stylesheet_link_tag "product_detail" %>
+
+<div class="product">
+    <%= image_tag((@product.Image_URL), :class => "card-img") %>
+
+    <div class="product-info">
+        <h1 class="heading"><%= @product.Name %></h1>
+        <span class="margin">Product I.D: <%= @product.id %></span><br>
+        <span class="margin">Price: <%= @product.Price %></span><br>
+        <span class="margin">Catagory: <%= @product.Catagory %></span><br>
+        <span class="margin"><%= @product.Description %></span>
+    </div>
+
+</div>
+
+<div class="order-container">
+    <span class="stock">In Stock</span>
+    <%= form_tag orders_path %>
+    <%= hidden_field_tag :product_id, @product.id %>
+    <%= hidden_field_tag :user_id, @current_user.id %>
+    <%= number_field_tag :quantity, 1, :class => "input"%>
+    <%= submit_tag "Add To Cart", :class => "btn"%>
+</div>

@@ -1,0 +1,39 @@
+<%= stylesheet_link_tag "index" %>
+
+<body>
+
+    <section>
+
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    
+    <div class="container">
+        <div class="card">
+            <div class="card-bottom">
+                <h3><b>Products:</b></h3> 
+                <%= image_tag(("earphones.jpeg"), :class => "card-img") %>
+                <p>Sennheiser Earphones</p> 
+                <p>Product ID: </p>
+                <p>Description: </p> 
+            </div>
+        </div>
+
+        <div class="card">
+                <div class="card-bottom">
+                <h3><b>Abstract Factory:</b></h3>
+                <%= image_tag(("kettle.jpeg"), :class => "card-img") %>  
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-bottom">
+                <h3><b><%= link_to "Electronics & Accessories:" %></b></h3> 
+                <%= image_tag(("macbook.jpeg"), :class => "card-img") %>
+                <%= @catagories.Name %><br>
+                <%= @catagories.Price %><br>
+                <%= truncate(@catagories.Description, :length => 100, :escape => false) %>
+            </div>
+        </div>
+    </div>
+
+<body>
