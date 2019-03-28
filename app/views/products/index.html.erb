@@ -10,26 +10,29 @@
     <div class="container">
         <div class="card">
             <div class="card-bottom">
-                <h3><b>Products:</b></h3> 
-                <%= image_tag(("earphones.jpeg"), :class => "card-img") %>
-                <p>Sennheiser Earphones</p> 
-                <p>Product ID: </p>
-                <p>Description: </p> 
+                <h3><b><%= link_to "Products", products_path %></b></h3> 
+                <%= image_tag((@product.Image_URL), :class => "card-img") %>
+                <b><%= @product.Name %><br></b>
+                <%= @product.Price %><br>
+                <%= truncate(@product.Description, :length => 100, :escape => false) %> 
             </div>
         </div>
 
         <div class="card">
                 <div class="card-bottom">
-                <h3><b>Abstract Factory:</b></h3>
-                <%= image_tag(("kettle.jpeg"), :class => "card-img") %>  
+                <h3><b><%= link_to "On Sale!:", product_path(@sale.id)  %></b></h3>
+                <%= image_tag((@sale.Image_URL), :class => "card-img") %>
+                <b><%= @sale.Name %><br></b>
+                <%= @sale.Price %><br>
+                <%= truncate(@sale.Description, :length => 100, :escape => false) %> 
             </div>
         </div>
 
         <div class="card">
             <div class="card-bottom">
-                <h3><b><%= link_to "Electronics & Accessories:" %></b></h3> 
+                <h3><b><%= link_to "Electronics & Accessories:", catagory_path %></b></h3> 
                 <%= image_tag(("macbook.jpeg"), :class => "card-img") %>
-                <%= @catagories.Name %><br>
+                <b><%= @catagories.Name %><br></b>
                 <%= @catagories.Price %><br>
                 <%= truncate(@catagories.Description, :length => 100, :escape => false) %>
             </div>

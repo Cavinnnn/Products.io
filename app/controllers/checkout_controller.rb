@@ -4,13 +4,11 @@ class CheckoutController < ApplicationController
     end
 
     def create
-        Order.update(
+        current_cart.observer(
+            status: params[:status],
             first_name: params[:first_name],
-            last_name: params[:last_name],
-            status: params[:status]
+            last_name: params[:last_name]
         )
-
         redirect_to orders_path
-        
     end
 end

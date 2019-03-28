@@ -2,6 +2,8 @@ class ProductsController < ApplicationController
     
     def index
        @catagories = Product.find(10) 
+       @sale = Product.find(4)
+       @product = Product.find(1)
     end 
 
     def product

@@ -32,7 +32,7 @@
                 </li>
                 <li class="right2">
                     <% if signed_in? %>
-                        <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+                       <%= link_to 'Sign out', destroy_user_session_path,:method => :delete%>
                     <% else %>
                         <%= link_to 'Sign in', new_user_session_path %>
                     <% end %>
@@ -44,9 +44,6 @@
 
     <div class="content">
       <div class="content-inside">
-        <%= apis.each do |api| %>
-          <%= api[2] %>
-        <% end %>
         <%= yield %>
       </div>
     </div>

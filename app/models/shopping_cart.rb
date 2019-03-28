@@ -23,10 +23,15 @@ class ShoppingCart
         order.save
       end
 
-      def place_order(first_name: first_name,last_name: last_name)
+      def observer(status: status, first_name: first_name, last_name: last_name)
+
+        Order.where(status: nil).update(
+            status: status,
+            first_name: first_name,
+            last_name: last_name
+          )
         
       end
-
       
     def remove_item(id:)
       Order.destroy(id)
