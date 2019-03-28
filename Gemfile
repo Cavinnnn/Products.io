@@ -5,12 +5,10 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
+ruby '2.3.3'
 gem 'devise'
-
 gem 'will_paginate', '~> 3.1', '>= 3.1.7'
-
 gem 'httparty', '~> 0.16.4'
-
 gem 'pg'
 
 
@@ -46,7 +44,6 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
-  gem 'sqlite3'
 end
 
 group :development do
@@ -57,7 +54,3 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-group :production do
-  gem 'pg'
-  gem 'rails_12factor'
-end
