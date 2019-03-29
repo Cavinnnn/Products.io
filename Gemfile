@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-ruby '2.3.3'
+
 gem 'devise'
 gem 'will_paginate', '~> 3.1', '>= 3.1.7'
 gem 'httparty', '~> 0.16.4'
