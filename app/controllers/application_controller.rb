@@ -1,6 +1,4 @@
-require 'net/http'
-require 'json'
-require 'net/http'
+
 
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
