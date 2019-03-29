@@ -10,8 +10,6 @@ gem 'devise'
 gem 'will_paginate', '~> 3.1', '>= 3.1.7'
 gem 'httparty', '~> 0.16.4'
 gem 'pg'
-
-
 gem 'bootstrap'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.6', '>= 5.1.6.1'
@@ -53,4 +51,9 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
 
