@@ -1,0 +1,31 @@
+<section class="search">
+            <h1 class="search-heading">Products.io</h1>
+
+                <%= form_tag products_path, class: "search-form", :method => 'get' do %>
+                  <%= text_field_tag :search, params[:search], class: "search-bar" %>
+                <%= submit_tag "search", class: "search-button"%>
+                <% end %>
+
+            <ul class="main-nav">
+                <li><%= link_to 'Home', root_path %></li>
+                <li><%= link_to 'Products', products_path %></li>
+                <li><%= link_to pluralize(current_cart.items_count, 'Order'), orders_path %></li>
+                <li class="centre"><a> Currency rates: 
+                  <%= apis.each do |api| %>
+                      <%= api[2] %>
+                  <% end %></a>
+                </li>
+
+                
+                <li class="right1">
+                    <%= link_to 'Sign up', new_user_registration_path  %>
+                </li>
+                <li class="right2">
+                    <% if signed_in? %>
+                       <%= link_to 'Sign out', destroy_user_session_path,:method => :delete%>
+                    <% else %>
+                        <%= link_to 'Sign in', new_user_session_path %>
+                    <% end %>
+                    </li>
+                </ul>
+</section>

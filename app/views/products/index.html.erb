@@ -1,7 +1,6 @@
 <%= stylesheet_link_tag "index" %>
 
 <body>
-
     <section>
 
     <p class="notice"><%= notice %></p>
@@ -10,7 +9,7 @@
     <div class="container">
         <div class="card">
             <div class="card-bottom">
-                <h3><b><%= link_to "Products", products_path %></b></h3> 
+                <h3><b><%= link_to "Products:", products_path %></b></h3> 
                 <%= image_tag((@product.Image_URL), :class => "card-img") %>
                 <b><%= @product.Name %><br></b>
                 <%= @product.Price %><br>

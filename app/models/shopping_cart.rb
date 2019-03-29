@@ -1,6 +1,8 @@
 require 'singleton'
+require 'observer'
 class ShoppingCart
   include Singleton
+  include Observer
 
       def order
         Order.where(status: nil)
@@ -30,7 +32,9 @@ class ShoppingCart
             first_name: first_name,
             last_name: last_name
           )
-        
+
+        notify_observers
+        puts "status: nil changes to #{status}"
       end
       
     def remove_item(id:)

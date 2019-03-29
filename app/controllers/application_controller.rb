@@ -11,15 +11,10 @@ class ApplicationController < ActionController::Base
   helper_method :current_cart
 
   def apis
-    @call = HTTParty.get('https://api.exchangeratesapi.io/latest?symbols=USD,GBP',
-      :headers =>{'Content-Type' => 'application/json'}, :verify => false)
+    @call = HTTParty.get('https://api.exchangeratesapi.io/latest?symbols=USD,GBP', :verify => false)
 
-    @apis = JSON.parse(@call.body)
-
-    # <%= apis.each do |api| %>
-    #   <%= api[2] %>
-    # <% end %>
-    
+    @rates = JSON.parse(@call.body)
+    @apis = @rates['rates']
   end
   helper_method :apis
 

@@ -7,7 +7,7 @@ class ProductsController < ApplicationController
     end 
 
     def product
-        @products = Product.all.paginate(page: params[:page], per_page: 10)
+        @products = Product.all.paginate(page: params[:page], per_page: 5)
     end
 
     def product_detail

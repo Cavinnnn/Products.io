@@ -1,18 +1,23 @@
-<h1>Checkout</h1>
+<%= stylesheet_link_tag "checkout" %>
+<div class="container">
+    <div class="login-wrap">
+    <h1>Checkout</h1>
+        <div class="form">
+            <%= form_tag url: checkout_path %>
 
-<%= form_tag url: checkout_path %>
+                <div class="form">
+                    <%= label_tag :first_name %>
+                    <%= hidden_field_tag :status, "In Progress" %>
+                    <%= text_field_tag :first_name %>
+                </div>
 
-    <div class="form">
-        <%= label_tag :first_name %>
-        <%= hidden_field_tag :status, "In Progress" %>
-        <%= text_field_tag :first_name %>
+                <div class="form">
+                    <%= label_tag :last_name %>
+                    <%= text_field_tag :last_name %>
+                </div>
+                
+
+            <%= submit_tag "Checkout", :class => "button" %>
+        </div>
     </div>
-
-    <div class="form">
-        <%= label_tag :last_name %>
-        <%= text_field_tag :last_name %>
-    </div>
-    
-
-    <%=  submit_tag "Checkout" %>
-
+</div>

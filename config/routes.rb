@@ -19,4 +19,6 @@ Rails.application.routes.draw do
   get '/profile/:id', to:'profiles#show'
   resources :profiles, path: '/profile/new'
   get '/signedinuserprofile' => 'profiles#signedinuserprofile'
+
+  get '/map', to: 'map#index', as: 'map'
 end
