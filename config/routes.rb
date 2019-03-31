@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :lrofiles
   root to: "products#index"
   get '/products', action: :product, controller: 'products'
   get '/products/:id', action: :product_detail, controller: 'products', as: 'product'
@@ -17,8 +16,8 @@ Rails.application.routes.draw do
   
   get '/profile/new', to:'profiles#new'
   get '/profile/:id', to:'profiles#show'
-  resources :profiles, path: '/profile/new'
+  resources :profiles, path: '/profile'
+
   get '/signedinuserprofile' => 'profiles#signedinuserprofile'
 
-  get '/map', to: 'map#index', as: 'map'
 end

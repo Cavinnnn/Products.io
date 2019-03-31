@@ -16,7 +16,13 @@
                   <% end %></a>
                 </li>
 
+                <li class="right3">
+                <% if signed_in? %>
+                    <%= link_to 'profile', {controller: 'profiles', action: 'new' } %>
+                <% else %>
                 
+                <% end %>
+                </li>
                 <li class="right1">
                     <%= link_to 'Sign up', new_user_registration_path  %>
                 </li>
